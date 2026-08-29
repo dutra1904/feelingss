@@ -3,28 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="feelingss estima idade, humor e sexo a partir da câmera ou de uma foto, só no seu navegador." />
     <title>feelingss</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="top">
-      <div>
-        <p class="eyebrow">visão computacional</p>
-        <h1>feelingss</h1>
-      </div>
-      <p id="status" class="status">Carregando modelos…</p>
-    </header>
+    <div class="page">
+      <header class="mast">
+        <div class="brand">
+          <p class="eyebrow">visão computacional local</p>
+          <h1>feelingss</h1>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite">Carregando modelos…</p>
+      </header>
 
-    <main class="stage">
-      <div class="frame">
-        <video id="video" playsinline autoplay muted></video>
-        <canvas id="overlay"></canvas>
-        <p id="hint" class="hint">Permita o acesso à câmera para começar.</p>
-      </div>
-      <button id="start" type="button" disabled>Abrir câmera</button>
-    </main>
+      <main class="workspace">
+        <section class="stage" aria-label="Visor">
+          <div id="frame" class="frame">
+            <video id="video" playsinline autoplay muted></video>
+            <img id="still" alt="Foto enviada para análise" />
+            <canvas id="overlay"></canvas>
+            <div id="hud" class="hud"></div>
+            <div class="reticle" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <p id="hint" class="hint">Abra a câmera ou envie uma foto.</p>
+          </div>
+
+          <div class="toolbar">
+            <button id="start" type="button" disabled aria-pressed="false">Abrir câmera</button>
+            <label class="file-btn">
+              Enviar foto
+              <input id="photo" type="file" accept="image/*" disabled />
+            </label>
+            <p class="privacy">A imagem não sai do navegador.</p>
+          </div>
+        </section>
+
+        <aside class="panel" aria-label="Leituras">
+          <div class="panel-head">
+            <h2>Leituras</h2>
+            <p>Caixa verde: estável. Âmbar: luz, ângulo ou confiança.</p>
+          </div>
+          <div id="readout" class="readout">
+            <p class="empty">Nenhum rosto no quadro. Olhe para a câmera ou envie uma foto nítida, de frente e com boa luz.</p>
+          </div>
+        </aside>
+      </main>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js"></script>
-    <script src="app.js"></script>
+    <script type="module" src="js/app.js"></script>
   </body>
 </html>

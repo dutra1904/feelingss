@@ -36,9 +36,19 @@ cd web
 python -m http.server 8000
 ```
 
-Abra [http://localhost:8000](http://localhost:8000), clique em **Abrir câmera** e permita o acesso. Não abra o `index.html` direto pelo Explorer (`file://`) — a webcam costuma bloquear.
+Abra [http://localhost:8000](http://localhost:8000). Use **Abrir câmera** ou **Enviar foto** (também dá para arrastar a imagem para o quadro). Não abra o `index.html` direto pelo Explorer (`file://`) — a webcam costuma bloquear. A foto é analisada só no navegador.
 
 Para publicar, envie a pasta `web/` para GitHub Pages, Netlify ou Vercel. A página precisa de HTTPS (ou localhost) para a câmera funcionar.
+
+### Publicar na Vercel
+
+1. Faça commit e push deste repositório para o GitHub (`dutra1904/feelingss`).
+2. Entre em [vercel.com/new](https://vercel.com/new) e entre com a conta do GitHub.
+3. Importe o repositório **feelingss**.
+4. Confira: **Framework Preset** = Other, **Root Directory** = `web` (ou deixe o `vercel.json` da raiz cuidar disso).
+5. Clique em **Deploy**.
+
+No fim a Vercel mostra um link tipo `https://feelingss-xxx.vercel.app`. Abra no celular ou no PC, clique em **Abrir câmera** e permita o acesso.
 
 ## O que esperar
 
