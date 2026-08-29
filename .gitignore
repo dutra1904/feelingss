@@ -1,0 +1,11 @@
+.venv/
+venv/
+__pycache__/
+*.pyc
+.idea/
+.vscode/
+*.egg-info/
+.DS_Store
+weights/
+.deepface/
+models/*.onnx

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>feelingss</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div>
+        <p class="eyebrow">visão computacional</p>
+        <h1>feelingss</h1>
+      </div>
+      <p id="status" class="status">Carregando modelos…</p>
+    </header>
+
+    <main class="stage">
+      <div class="frame">
+        <video id="video" playsinline autoplay muted></video>
+        <canvas id="overlay"></canvas>
+        <p id="hint" class="hint">Permita o acesso à câmera para começar.</p>
+      </div>
+      <button id="start" type="button" disabled>Abrir câmera</button>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
