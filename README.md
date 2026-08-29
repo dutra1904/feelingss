@@ -45,8 +45,13 @@ Para publicar, envie a pasta `web/` para GitHub Pages, Netlify ou Vercel. A pág
 1. Faça commit e push deste repositório para o GitHub (`dutra1904/feelingss`).
 2. Entre em [vercel.com/new](https://vercel.com/new) e entre com a conta do GitHub.
 3. Importe o repositório **feelingss**.
-4. Confira: **Framework Preset** = Other, **Root Directory** = `web` (ou deixe o `vercel.json` da raiz cuidar disso).
-5. Clique em **Deploy**.
+4. Use **só uma** destas configs (as duas juntas quebram o build):
+   - **Root Directory** vazio e Output Directory `web` (o `vercel.json` da raiz já define isso), ou
+   - **Root Directory** = `web` e Output Directory vazio ou `.` (o `web/vercel.json` cobre isso).
+5. Framework: Other. Sem comando de build.
+6. Clique em **Deploy**.
+
+Se o deploy falhar com *No Output Directory named "web"*, o Root Directory do projeto já é `web`. Em **Settings → General → Build & Development Settings**, apague o Output Directory `web` (ou ponha `.`) e faça **Redeploy**.
 
 No fim a Vercel mostra um link tipo `https://feelingss-xxx.vercel.app`. Abra no celular ou no PC, clique em **Abrir câmera** e permita o acesso.
 
